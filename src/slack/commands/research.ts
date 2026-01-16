@@ -1,0 +1,1 @@
+// Research command shall yield an object that acts as input for our Anthropic request
