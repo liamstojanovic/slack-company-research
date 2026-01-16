@@ -1,32 +1,27 @@
 {
   "name": "slack-company-research",
-  "version": "1.0.0",
-  "description": "Slack slash command for automated company research using AI",
-  "main": "index.js",
+  "version": "0.1.0",
+  "description": "Automate preliminary org research via Slack slash commands",
   "scripts": {
-    "dev": "ts-node src/test-local.ts",
-    "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "npx tsc && node dist/index.js"
   },
   "keywords": [
     "slack",
-    "company-research",
+    "business-productivity",
     "claude-ai"
   ],
-  "author": "",
-  "license": "MIT",
+  "contributors": [
+    "Ruben Ramirez",
+    "Liam M Stojanovic"
+  ],
+  "license": "UNLICENSED",
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.32.1",
-    "@slack/web-api": "^7.9.0",
-    "axios": "^1.7.9",
-    "cheerio": "^1.0.0",
-    "dotenv": "^16.4.7"
+    "@anthropic-ai/sdk": "0.71.2",
+    "@slack/web-api": "^7.13.0"
   },
   "devDependencies": {
-    "@types/cheerio": "^0.22.31",
     "@types/node": "^22.10.5",
-    "@vercel/node": "^3.2.28",
-    "ts-node": "^10.9.2",
+    "ts-node": "10.9.2",
     "typescript": "^5.7.3"
   }
 }
