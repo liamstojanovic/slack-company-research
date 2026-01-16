@@ -2,8 +2,9 @@
   "name": "slack-company-research",
   "version": "0.1.0",
   "description": "Automate preliminary org research via Slack slash commands",
+  "main": "dist/index.js",
   "scripts": {
-    "dev": "npx tsc && node dist/index.js"
+    "dev": "npx tsc && node --env-file=.env dist/index.js"
   },
   "keywords": [
     "slack",
