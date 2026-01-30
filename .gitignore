@@ -29,3 +29,6 @@ coverage/
 
 # Typescript incremental build info
 tsconfig.tsbuildinfo
+
+# Deployment
+*.zip
