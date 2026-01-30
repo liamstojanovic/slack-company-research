@@ -6,6 +6,8 @@ export const createSlackWebClient = (accessToken: string) => {
 
     return web;
 }
-// I think it's okay for this file to export its own methods and act as a barrel file. We can organize this file to strictly be the latter if needed.
+
+export * from "./types";
+export * from "./respond";
 export * from "./sendMessage";
-export * from "./commands/research"
+export * from "./commands/research";
