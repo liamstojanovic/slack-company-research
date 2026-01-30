@@ -1,9 +1,9 @@
-// Startuo-specific methods.
-export function getEnv(): { SLACK_BOT_USER_OAUTH_ACCESS_TOKEN: string, CLAUDE_API_KEY: string, CLAUDE_MODEL: string } {
-    const { SLACK_BOT_USER_OAUTH_ACCESS_TOKEN, CLAUDE_API_KEY, CLAUDE_MODEL } = process.env;
-    if (!SLACK_BOT_USER_OAUTH_ACCESS_TOKEN || !CLAUDE_API_KEY || !CLAUDE_MODEL) {
-        console.error("One or more required environment variables are undefined");
+// Startup-specific methods.
+export function getEnv(): { SLACK_BOT_USER_OAUTH_ACCESS_TOKEN: string } {
+    const { SLACK_BOT_USER_OAUTH_ACCESS_TOKEN } = process.env;
+    if (!SLACK_BOT_USER_OAUTH_ACCESS_TOKEN) {
+        console.error("SLACK_BOT_USER_OAUTH_ACCESS_TOKEN environment variable is required");
         process.exit(1);
     }
-    return { SLACK_BOT_USER_OAUTH_ACCESS_TOKEN, CLAUDE_API_KEY, CLAUDE_MODEL };
+    return { SLACK_BOT_USER_OAUTH_ACCESS_TOKEN };
 }

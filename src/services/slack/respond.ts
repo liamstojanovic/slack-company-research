@@ -5,6 +5,11 @@ export async function respondToSlashCommand(
     text: string,
     responseType: "in_channel" | "ephemeral" = "in_channel"
 ): Promise<void> {
+    // Log response for testing
+    console.log("\n--- Slack Response ---");
+    console.log(text);
+    console.log("----------------------\n");
+
     const response = await fetch(responseUrl, {
         method: "POST",
         headers: {
