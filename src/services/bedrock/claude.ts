@@ -3,13 +3,18 @@ import {
     ConverseCommand,
     type Message,
 } from "@aws-sdk/client-bedrock-runtime";
+import { fromIni } from "@aws-sdk/credential-providers";
 
 const CLAUDE_HAIKU_MODEL_ID = "anthropic.claude-3-haiku-20240307-v1:0";
 
-// Create Bedrock client with the specified AWS profile
+// Create Bedrock client using default credential chain
+// - On Lambda: uses execution role credentials automatically
+// - Locally: uses AWS_PROFILE env var if set
 const bedrockClient = new BedrockRuntimeClient({
-    region: "us-east-1",
-    profile: "liam",
+    region: process.env.AWS_REGION || "us-east-1",
+    ...(process.env.AWS_PROFILE && {
+        credentials: fromIni({ profile: process.env.AWS_PROFILE }),
+    }),
 });
 
 // Research a company domain using Claude Haiku via AWS Bedrock
