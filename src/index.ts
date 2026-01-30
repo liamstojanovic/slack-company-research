@@ -1,7 +1,7 @@
 import { getEnv } from "./startup";
-import { createSlackWebClient } from "./slack";
+import { createSlackWebClient } from "./services/slack";
 import { WebClient } from "@slack/web-api";
-import { sendMessage } from "./slack/sendMessage";
+import { sendMessage } from "./services/slack/sendMessage";
 
 (() => {
     // Load in environment variables
